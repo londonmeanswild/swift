@@ -1,0 +1,32 @@
+NSTimer:
+https://developer.apple.com/documentation/foundation/nstimer#1667624?language=objc
+
+A timer that fires after a certain time interval has elapsed, sending a specified message to a target object.
+
+ Run loops maintain strong references to their timers, so you don’t have to maintain your own strong reference to a timer after you have added it to a run loop.
+
+ A timer is not a real-time mechanism. If a timer’s firing time occurs during a long run loop callout or while the run loop is in a mode that isn't monitoring the timer, the timer doesn't fire until the next time the run loop checks the timer.
+    https://developer.apple.com/documentation/foundation/nstimer/1415085-tolerance?language=objc
+    The timer may fire at any time between its scheduled fire date and the scheduled fire date plus the tolerance. The timer will not fire before the scheduled fire date. For repeating timers, the next fire date is calculated from the original fire date regardless of tolerance applied at individual fire times, to avoid drift. The system reserves the right to apply a small amount of tolerance to certain timers regardless of the value of this property.
+
+for repeating timer, must invalidate the timer object by calling its invalidate method, which requests the removal of the timer from the current run loop. cannot be reused.
+
+DO NOT SUBCLASS
+
+scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:
+
+    + (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)interval
+                                        repeats:(BOOL)repeats
+                                          block:(void (^)(NSTimer *timer))block;
+
+    https://developer.apple.com/documentation/foundation/nstimer/2091889-scheduledtimerwithtimeinterval?language=objc
+
+
+timerWithTimeInterval:target:selector:userInfo:repeats:
++ (NSTimer *)timerWithTimeInterval:(NSTimeInterval)ti
+                            target:(id)aTarget
+                          selector:(SEL)aSelector
+                          userInfo:(id)userInfo
+                           repeats:(BOOL)yesOrNo;
+
+    https://developer.apple.com/documentation/foundation/nstimer/1408356-timerwithtimeinterval?language=objc

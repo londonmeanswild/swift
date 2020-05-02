@@ -1,0 +1,20 @@
+dispatch_after
+https://developer.apple.com/documentation/dispatch/1452876-dispatch_after
+
+void dispatch_after(dispatch_time_t when, dispatch_queue_t queue, dispatch_block_t block);
+
+    Parameters
+    when
+        The temporal milestone returned by dispatch_time or dispatch_walltime.
+    queue
+        The queue on which to submit the block. The queue is retained by the system until the block has run to completion. This parameter cannot be NULL.
+    block
+        The block to submit. This function performs a Block_copy and Block_release on behalf of the caller. This parameter cannot be NULL.
+
+
+https://stackoverflow.com/questions/24034544/dispatch-after-gcd-in-swift/24318861#24318861
+
+https://gist.github.com/danielgalasko/bdd363a8c3b530d8bca8
+
+https://developer.apple.com/documentation/dispatch/dispatch_queue_types?language=objc
+can create new dispatch queues

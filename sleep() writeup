@@ -1,0 +1,25 @@
+sleep()
+not what we want. we awant to do NSTimer to fire _ seconds later with the thing we want done.
+usleep is microseconds
+sleep(2 seconds) = usleep(2000000)
+
+sleep(forTimeInterval:)
+
+    No run loop processing occurs while the thread is blocked.
+
+    class func sleep(forTimeInterval ti: TimeInterval)
+    Parameters
+    ti
+        The duration of the sleep.
+
+
+    Stopping a Thread
+
+    class func sleep(until: Date)
+        Blocks the current thread until the time specified.
+    class func exit()
+        Terminates the current thread.
+    func cancel()
+        Changes the cancelled state of the receiver to indicate that it should exit.
+
+https://forums.macrumors.com/threads/sleep-vs-usleep-vs-nsthread-sleepfortimeinterval.525271/
